@@ -1,1 +1,1 @@
-# Minor
+# Encrypted Chat
