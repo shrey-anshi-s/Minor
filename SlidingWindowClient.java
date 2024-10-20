@@ -53,7 +53,7 @@ public class SlidingWindowClient {
                     nextSeqNum++;
                 } catch (IOException e) {
                     e.printStackTrace();
-                    messageQueue.offer(message); // Put the message back in the queue
+                    messageQueue.offer(message); 
                     break;
                 }
             }
@@ -165,12 +165,12 @@ public class SlidingWindowClient {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter local port: ");
         int localPort = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.print("Enter peer IP address: ");
         String peerAddress = scanner.nextLine();
         System.out.print("Enter peer port: ");
         int peerPort = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         int windowSize = 4;
 
