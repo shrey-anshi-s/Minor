@@ -1,4 +1,5 @@
 package backend.network;
+
 import java.net.*;
 import java.util.*;
 
@@ -6,26 +7,26 @@ public class NetworkConfiguration {
     private static final int DEFAULT_PORT = 8888;
     private static final int PORT_RANGE_START = 8888;
     private static final int PORT_RANGE_END = 9999;
-    
+
     public static class NetworkInfo {
         private final String ipAddress;
         private final int port;
-        
+
         public NetworkInfo(String ipAddress, int port) {
             this.ipAddress = ipAddress;
             this.port = port;
         }
-        
+
         public String getIpAddress() { return ipAddress; }
         public int getPort() { return port; }
     }
-    
+
     public static NetworkInfo getLocalNetworkInfo() {
         String ipAddress = getLocalIpAddress();
         int port = findAvailablePort();
         return new NetworkInfo(ipAddress, port);
     }
-    
+
     private static String getLocalIpAddress() {
         try {
             // Try to get WiFi/Ethernet IP first
@@ -45,30 +46,29 @@ public class NetworkConfiguration {
                     }
                 }
             }
-            
+
             // Fallback to loopback if no other IP is found
             return InetAddress.getLocalHost().getHostAddress();
         } catch (Exception e) {
+            System.err.println("Error getting local IP address: " + e.getMessage());
             return "127.0.0.1"; // Default to localhost if there's an error
         }
     }
-    
+
     private static int findAvailablePort() {
         for (int port = PORT_RANGE_START; port <= PORT_RANGE_END; port++) {
-            try (ServerSocket socket = new ServerSocket(port)) {
+            if (isPortAvailable(port)) {
                 return port;
-            } catch (Exception e) {
-                continue;
             }
         }
-        return DEFAULT_PORT;
+        return DEFAULT_PORT; // Fallback to default if no available port is found
     }
-    
+
     public static boolean isPortAvailable(int port) {
         try (ServerSocket socket = new ServerSocket(port)) {
             return true;
         } catch (Exception e) {
-            return false;
+            throw new RuntimeException("Port is not available: " + e.getMessage(), e);
         }
     }
 }

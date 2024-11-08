@@ -11,7 +11,7 @@ public class SecureNetworkMessage implements Serializable {
         ACK, 
         NACK, 
         CONFIRM, 
-        CONFIRM_RESPONSE
+        CONFIRM_RESPONSE, HEARTBEAT
     }
     
     private MessageType type;
