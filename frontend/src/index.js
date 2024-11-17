@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/ChatApp.css"; // Importing the CSS for global styles
+import App from "./App"; // Import the main App component
 
-import App from './App.jsx';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root") // Ensures the App is rendered in the correct HTML element
 );
