@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal"; // Importing the modal component
-import "./services/ChatApp.css"; // Importing the CSS file
+import "./ChatApp.css"; // Importing the CSS file
 
 function ChatApp() {
   const [messages, setMessages] = useState([]);
