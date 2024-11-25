@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #004aad; /* Deep blue for text */
+}
+
+.title-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.email-text {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button {
+  background-color: #004aad; /* Blue button */
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #003580; /* Darker blue on hover */
+}
+
+.signup-button {
+  background-color: #d11a2a; /* Red button */
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: #a11321; /* Darker red on hover */
+}
+
+.logout-button {
+  background-color: #555; /* Neutral grey for logout */
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #333; /* Darker grey on hover */
+}
