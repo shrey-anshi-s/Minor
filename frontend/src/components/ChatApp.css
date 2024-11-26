@@ -1,0 +1,192 @@
+
+/* General container and layout styles */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f8ff; /* Light blue */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #add8e6; /* Light blue */
+    border-bottom: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #003366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .main-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* User List Section */
+  .user-list {
+    width: 25%;
+    background-color: white;
+    border-right: 2px solid red;
+    padding: 10px;
+  }
+  
+  .user-list-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #003366; /* Dark blue */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  
+  .active-user {
+    background-color: #ffcccb; /* Light red */
+    font-weight: bold;
+  }
+  
+  /* Chat Window Section */
+  .chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9; /* White */
+    border-radius: 5px;
+  }
+  
+  .chat-message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 60%;
+    font-size: 14px;
+  }
+  
+  .current-user {
+    background-color: #e0f7fa; /* Light blue */
+    align-self: flex-end;
+  }
+  
+  .other-user {
+    background-color: #ffcccb; /* Light red */
+    align-self: flex-start;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f8ff;
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .send-button {
+    background-color: #003366; /* Dark blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #ff4d4d; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .close-modal-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #003366; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
