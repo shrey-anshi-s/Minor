@@ -1,24 +1,29 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const authRoutes = require('./routes/auth');
+const app = require('./app');
+require("dotenv").config();
 
-const app = express();
+// Setup database 
+const mongoose = require ("mongoose");
+mongoose.connect(process.env.DATABASE, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+});
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
+mongoose.connection.on("error", (err) =>{
+    console.log("Mongoose Connection Error: " + err.message );
+} )
 
-// Routes
-app.use('/api/auth', authRoutes);
+mongoose.connection.once('open', ()=>{
+    console.log("MongoDB Connected");
+});
 
-// MongoDB Connection
-mongoose
-  .connect('mongodb://127.0.0.1:27017/chatApp', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch((err) => console.error(err));
+//Bring routes 
+app.use(require("./routes/user"));
 
-// Start Server
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Bring in models
+
+require('./models/User');
+require('./models/User');
+
+app.listen(8000,() => {
+    console.log("server listing on port 8000");
+})
